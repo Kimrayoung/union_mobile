@@ -30,6 +30,9 @@
 		4D41614D2D356BE80055CF77 /* CandidateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41614C2D356BE80055CF77 /* CandidateCard.swift */; };
 		4D41614F2D356CC10055CF77 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41614E2D356CC10055CF77 /* Candidate.swift */; };
 		4D4161522D3578AE0055CF77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4D4161512D3578AE0055CF77 /* Kingfisher */; };
+		4D4161542D357BD00055CF77 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4161532D357BD00055CF77 /* APIManager.swift */; };
+		4D4161562D357BF10055CF77 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4161552D357BF10055CF77 /* NetworkManager.swift */; };
+		4D41615E2D357CEF0055CF77 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41615D2D357CEF0055CF77 /* MockNetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -76,6 +79,9 @@
 		4D062FE62D351C9600051229 /* TimeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCard.swift; sourceTree = "<group>"; };
 		4D41614C2D356BE80055CF77 /* CandidateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCard.swift; sourceTree = "<group>"; };
 		4D41614E2D356CC10055CF77 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
+		4D4161532D357BD00055CF77 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		4D4161552D357BF10055CF77 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		4D41615D2D357CEF0055CF77 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,22 +133,14 @@
 		4D062F9E2D34033100051229 /* union_mobile */ = {
 			isa = PBXGroup;
 			children = (
+				4D41615B2D357C8A0055CF77 /* ViewModels */,
+				4D4161592D357C510055CF77 /* Datas */,
+				4D4161582D357C240055CF77 /* Views */,
+				4D4161572D357C090055CF77 /* Network */,
 				4D062FE82D351DFF00051229 /* Design System */,
 				4D062FD72D341C5900051229 /* union-mobile-Info.plist */,
-				4D062FDE2D35171E00051229 /* EarthImageView.swift */,
-				4D062FE02D35176C00051229 /* QueenImageView.swift */,
 				4D062FD32D341AB600051229 /* Resources */,
 				4D062F9F2D34033100051229 /* union_mobileApp.swift */,
-				4D062FCD2D3412EB00051229 /* DefaultView.swift */,
-				4D062FD12D34137500051229 /* Service.swift */,
-				4D062FCF2D34134800051229 /* Path.swift */,
-				4D062FA12D34033100051229 /* MainView.swift */,
-				4D062FDC2D350FCD00051229 /* VoteView.swift */,
-				4D41614C2D356BE80055CF77 /* CandidateCard.swift */,
-				4D062FE22D35191300051229 /* CountDown.swift */,
-				4D41614E2D356CC10055CF77 /* Candidate.swift */,
-				4D062FE42D35193E00051229 /* VoteViewModel.swift */,
-				4D062FE62D351C9600051229 /* TimeCard.swift */,
 				4D062FA32D34033300051229 /* Assets.xcassets */,
 				4D062FA52D34033300051229 /* Preview Content */,
 			);
@@ -161,6 +159,7 @@
 			isa = PBXGroup;
 			children = (
 				4D062FB02D34033300051229 /* union_mobileTests.swift */,
+				4D41615D2D357CEF0055CF77 /* MockNetworkManager.swift */,
 			);
 			path = union_mobileTests;
 			sourceTree = "<group>";
@@ -198,6 +197,64 @@
 				4D062FC92D3407FF00051229 /* Color.swift */,
 			);
 			path = "Design System";
+			sourceTree = "<group>";
+		};
+		4D4161572D357C090055CF77 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				4D4161552D357BF10055CF77 /* NetworkManager.swift */,
+				4D4161532D357BD00055CF77 /* APIManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		4D4161582D357C240055CF77 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				4D41615F2D357D560055CF77 /* VoteMain */,
+				4D41615C2D357CA00055CF77 /* CustomCommonView */,
+				4D062FA12D34033100051229 /* MainView.swift */,
+				4D062FCD2D3412EB00051229 /* DefaultView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		4D4161592D357C510055CF77 /* Datas */ = {
+			isa = PBXGroup;
+			children = (
+				4D062FE22D35191300051229 /* CountDown.swift */,
+				4D062FCF2D34134800051229 /* Path.swift */,
+				4D41614E2D356CC10055CF77 /* Candidate.swift */,
+			);
+			path = Datas;
+			sourceTree = "<group>";
+		};
+		4D41615B2D357C8A0055CF77 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				4D062FD12D34137500051229 /* Service.swift */,
+				4D062FE42D35193E00051229 /* VoteViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		4D41615C2D357CA00055CF77 /* CustomCommonView */ = {
+			isa = PBXGroup;
+			children = (
+				4D062FDE2D35171E00051229 /* EarthImageView.swift */,
+				4D062FE02D35176C00051229 /* QueenImageView.swift */,
+			);
+			path = CustomCommonView;
+			sourceTree = "<group>";
+		};
+		4D41615F2D357D560055CF77 /* VoteMain */ = {
+			isa = PBXGroup;
+			children = (
+				4D062FDC2D350FCD00051229 /* VoteView.swift */,
+				4D062FE62D351C9600051229 /* TimeCard.swift */,
+				4D41614C2D356BE80055CF77 /* CandidateCard.swift */,
+			);
+			path = VoteMain;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -338,6 +395,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4161542D357BD00055CF77 /* APIManager.swift in Sources */,
 				4D062FCC2D34125D00051229 /* Font.swift in Sources */,
 				4D062FE32D35191300051229 /* CountDown.swift in Sources */,
 				4D062FD22D34137500051229 /* Service.swift in Sources */,
@@ -347,6 +405,7 @@
 				4D062FA22D34033100051229 /* MainView.swift in Sources */,
 				4D062FA02D34033100051229 /* union_mobileApp.swift in Sources */,
 				4D41614D2D356BE80055CF77 /* CandidateCard.swift in Sources */,
+				4D4161562D357BF10055CF77 /* NetworkManager.swift in Sources */,
 				4D062FE12D35176C00051229 /* QueenImageView.swift in Sources */,
 				4D062FCA2D3407FF00051229 /* Color.swift in Sources */,
 				4D062FD02D34134800051229 /* Path.swift in Sources */,
@@ -360,6 +419,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D41615E2D357CEF0055CF77 /* MockNetworkManager.swift in Sources */,
 				4D062FB12D34033300051229 /* union_mobileTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
