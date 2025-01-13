@@ -17,7 +17,7 @@ struct VoteView: View {
                 timeStack
                 EarthImageView()
                 voteInformation
-                candidateList
+                candidateView
             }
         }
         
@@ -119,7 +119,7 @@ struct VoteView: View {
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }
     
-    var candidateList: some View {
+    var candidateView: some View {
         VStack(spacing: 0) {
             Rectangle()
                 .foregroundStyle(Color.customBlue)
@@ -139,6 +139,16 @@ struct VoteView: View {
         .padding(.vertical, 50)
         .padding(.horizontal, 16)
     }
+    
+//    var candidateList: some View {
+//        LazyVGrid(columns: columns, spacing: 16) {
+//            ForEach(viewModel) { candidate in
+//                CandidateCard(candidate: candidate)
+//            }
+//        }
+//        .padding()
+//    }
+
 }
 
 #Preview {
