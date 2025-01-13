@@ -19,6 +19,17 @@
 		4D062FCE2D3412EB00051229 /* DefaultView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FCD2D3412EB00051229 /* DefaultView.swift */; };
 		4D062FD02D34134800051229 /* Path.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FCF2D34134800051229 /* Path.swift */; };
 		4D062FD22D34137500051229 /* Service.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FD12D34137500051229 /* Service.swift */; };
+		4D062FDD2D350FCD00051229 /* VoteView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FDC2D350FCD00051229 /* VoteView.swift */; };
+		4D062FDF2D35171E00051229 /* EarthImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FDE2D35171E00051229 /* EarthImageView.swift */; };
+		4D062FE12D35176C00051229 /* QueenImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FE02D35176C00051229 /* QueenImageView.swift */; };
+		4D062FE32D35191300051229 /* CountDown.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FE22D35191300051229 /* CountDown.swift */; };
+		4D062FE52D35193E00051229 /* VoteViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FE42D35193E00051229 /* VoteViewModel.swift */; };
+		4D062FE72D351C9600051229 /* TimeCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D062FE62D351C9600051229 /* TimeCard.swift */; };
+		4D41614A2D3526BB0055CF77 /* KantumruyPro-Italic-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D062FD52D341ADA00051229 /* KantumruyPro-Italic-VariableFont_wght.ttf */; };
+		4D41614B2D3526BD0055CF77 /* KantumruyPro-VariableFont_wght.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 4D062FD62D341ADA00051229 /* KantumruyPro-VariableFont_wght.ttf */; };
+		4D41614D2D356BE80055CF77 /* CandidateCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41614C2D356BE80055CF77 /* CandidateCard.swift */; };
+		4D41614F2D356CC10055CF77 /* Candidate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41614E2D356CC10055CF77 /* Candidate.swift */; };
+		4D4161522D3578AE0055CF77 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 4D4161512D3578AE0055CF77 /* Kingfisher */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -57,6 +68,14 @@
 		4D062FD52D341ADA00051229 /* KantumruyPro-Italic-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KantumruyPro-Italic-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		4D062FD62D341ADA00051229 /* KantumruyPro-VariableFont_wght.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KantumruyPro-VariableFont_wght.ttf"; sourceTree = "<group>"; };
 		4D062FD72D341C5900051229 /* union-mobile-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = "union-mobile-Info.plist"; sourceTree = SOURCE_ROOT; };
+		4D062FDC2D350FCD00051229 /* VoteView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteView.swift; sourceTree = "<group>"; };
+		4D062FDE2D35171E00051229 /* EarthImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EarthImageView.swift; sourceTree = "<group>"; };
+		4D062FE02D35176C00051229 /* QueenImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QueenImageView.swift; sourceTree = "<group>"; };
+		4D062FE22D35191300051229 /* CountDown.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CountDown.swift; sourceTree = "<group>"; };
+		4D062FE42D35193E00051229 /* VoteViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteViewModel.swift; sourceTree = "<group>"; };
+		4D062FE62D351C9600051229 /* TimeCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeCard.swift; sourceTree = "<group>"; };
+		4D41614C2D356BE80055CF77 /* CandidateCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CandidateCard.swift; sourceTree = "<group>"; };
+		4D41614E2D356CC10055CF77 /* Candidate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Candidate.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -64,6 +83,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4D4161522D3578AE0055CF77 /* Kingfisher in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -107,17 +127,24 @@
 		4D062F9E2D34033100051229 /* union_mobile */ = {
 			isa = PBXGroup;
 			children = (
+				4D062FE82D351DFF00051229 /* Design System */,
 				4D062FD72D341C5900051229 /* union-mobile-Info.plist */,
+				4D062FDE2D35171E00051229 /* EarthImageView.swift */,
+				4D062FE02D35176C00051229 /* QueenImageView.swift */,
 				4D062FD32D341AB600051229 /* Resources */,
 				4D062F9F2D34033100051229 /* union_mobileApp.swift */,
 				4D062FCD2D3412EB00051229 /* DefaultView.swift */,
 				4D062FD12D34137500051229 /* Service.swift */,
 				4D062FCF2D34134800051229 /* Path.swift */,
 				4D062FA12D34033100051229 /* MainView.swift */,
-				4D062FCB2D34125D00051229 /* Font.swift */,
+				4D062FDC2D350FCD00051229 /* VoteView.swift */,
+				4D41614C2D356BE80055CF77 /* CandidateCard.swift */,
+				4D062FE22D35191300051229 /* CountDown.swift */,
+				4D41614E2D356CC10055CF77 /* Candidate.swift */,
+				4D062FE42D35193E00051229 /* VoteViewModel.swift */,
+				4D062FE62D351C9600051229 /* TimeCard.swift */,
 				4D062FA32D34033300051229 /* Assets.xcassets */,
 				4D062FA52D34033300051229 /* Preview Content */,
-				4D062FC92D3407FF00051229 /* Color.swift */,
 			);
 			path = union_mobile;
 			sourceTree = "<group>";
@@ -150,18 +177,27 @@
 		4D062FD32D341AB600051229 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				4D062FD42D341ACE00051229 /* Font */,
+				4D062FD42D341ACE00051229 /* Fonts */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
 		};
-		4D062FD42D341ACE00051229 /* Font */ = {
+		4D062FD42D341ACE00051229 /* Fonts */ = {
 			isa = PBXGroup;
 			children = (
 				4D062FD52D341ADA00051229 /* KantumruyPro-Italic-VariableFont_wght.ttf */,
 				4D062FD62D341ADA00051229 /* KantumruyPro-VariableFont_wght.ttf */,
 			);
-			path = Font;
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		4D062FE82D351DFF00051229 /* Design System */ = {
+			isa = PBXGroup;
+			children = (
+				4D062FCB2D34125D00051229 /* Font.swift */,
+				4D062FC92D3407FF00051229 /* Color.swift */,
+			);
+			path = "Design System";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -180,6 +216,9 @@
 			dependencies = (
 			);
 			name = union_mobile;
+			packageProductDependencies = (
+				4D4161512D3578AE0055CF77 /* Kingfisher */,
+			);
 			productName = union_mobile;
 			productReference = 4D062F9C2D34033100051229 /* union_mobile.app */;
 			productType = "com.apple.product-type.application";
@@ -252,6 +291,9 @@
 				Base,
 			);
 			mainGroup = 4D062F932D34033100051229;
+			packageReferences = (
+				4D4161502D3578AE0055CF77 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+			);
 			productRefGroup = 4D062F9D2D34033100051229 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -269,6 +311,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D062FA72D34033300051229 /* Preview Assets.xcassets in Resources */,
+				4D41614A2D3526BB0055CF77 /* KantumruyPro-Italic-VariableFont_wght.ttf in Resources */,
+				4D41614B2D3526BD0055CF77 /* KantumruyPro-VariableFont_wght.ttf in Resources */,
 				4D062FA42D34033300051229 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -295,12 +339,20 @@
 			buildActionMask = 2147483647;
 			files = (
 				4D062FCC2D34125D00051229 /* Font.swift in Sources */,
+				4D062FE32D35191300051229 /* CountDown.swift in Sources */,
 				4D062FD22D34137500051229 /* Service.swift in Sources */,
+				4D41614F2D356CC10055CF77 /* Candidate.swift in Sources */,
+				4D062FDD2D350FCD00051229 /* VoteView.swift in Sources */,
+				4D062FE52D35193E00051229 /* VoteViewModel.swift in Sources */,
 				4D062FA22D34033100051229 /* MainView.swift in Sources */,
 				4D062FA02D34033100051229 /* union_mobileApp.swift in Sources */,
+				4D41614D2D356BE80055CF77 /* CandidateCard.swift in Sources */,
+				4D062FE12D35176C00051229 /* QueenImageView.swift in Sources */,
 				4D062FCA2D3407FF00051229 /* Color.swift in Sources */,
 				4D062FD02D34134800051229 /* Path.swift in Sources */,
+				4D062FDF2D35171E00051229 /* EarthImageView.swift in Sources */,
 				4D062FCE2D3412EB00051229 /* DefaultView.swift in Sources */,
+				4D062FE72D351C9600051229 /* TimeCard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -634,6 +686,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		4D4161502D3578AE0055CF77 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.3;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		4D4161512D3578AE0055CF77 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 4D4161502D3578AE0055CF77 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 4D062F942D34033100051229 /* Project object */;
 }

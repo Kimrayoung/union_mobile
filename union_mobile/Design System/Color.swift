@@ -8,12 +8,44 @@
 import SwiftUI
 
 extension Color {
+    /// 4232D5
     static var darkBlue: Color {
         return Color(hex: "4232D5")
     }
     
+    /// 6F76FF
+    static var customBlue: Color {
+        return Color(hex: "6F76FF")
+    }
+    
+    /// DBDBDB
     static var lightGray: Color {
         return Color(hex: "DBDBDB")
+    }
+    
+    /// DADADA
+    static var lightGray2: Color {
+        return Color(hex: "DADADA")
+    }
+    
+    /// B9B9B9
+    static var customGray: Color {
+        return Color(hex: "B9B9B9")
+    }
+    
+    /// AEAEB2
+    static var gray02: Color {
+        return Color(hex: "AEAEB2")
+    }
+    
+    /// D9D9D9
+    static var lightGray3: Color {
+        return Color(hex: "D9D9D9")
+    }
+    
+    /// F6F6F6
+    static var lightGray4: Color {
+        return Color(hex: "F6F6F6")
     }
     
     
