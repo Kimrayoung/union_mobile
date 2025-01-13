@@ -9,7 +9,7 @@ import Foundation
 
 class Service: ObservableObject {
     @Published var path: [Path] = []
-//    @Published var myUserModel: User! = nil
+    @Published var myUserModel: User! = nil
     
     init() { }
     

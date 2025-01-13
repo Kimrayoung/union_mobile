@@ -33,6 +33,8 @@
 		4D4161542D357BD00055CF77 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4161532D357BD00055CF77 /* APIManager.swift */; };
 		4D4161562D357BF10055CF77 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4161552D357BF10055CF77 /* NetworkManager.swift */; };
 		4D41615E2D357CEF0055CF77 /* MockNetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D41615D2D357CEF0055CF77 /* MockNetworkManager.swift */; };
+		4D4161612D357DEA0055CF77 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4161602D357DEA0055CF77 /* User.swift */; };
+		4D4161632D357EC40055CF77 /* VoteButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4D4161622D357EC40055CF77 /* VoteButton.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -82,6 +84,8 @@
 		4D4161532D357BD00055CF77 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
 		4D4161552D357BF10055CF77 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		4D41615D2D357CEF0055CF77 /* MockNetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MockNetworkManager.swift; sourceTree = "<group>"; };
+		4D4161602D357DEA0055CF77 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		4D4161622D357EC40055CF77 /* VoteButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VoteButton.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,6 +229,7 @@
 				4D062FE22D35191300051229 /* CountDown.swift */,
 				4D062FCF2D34134800051229 /* Path.swift */,
 				4D41614E2D356CC10055CF77 /* Candidate.swift */,
+				4D4161602D357DEA0055CF77 /* User.swift */,
 			);
 			path = Datas;
 			sourceTree = "<group>";
@@ -243,6 +248,7 @@
 			children = (
 				4D062FDE2D35171E00051229 /* EarthImageView.swift */,
 				4D062FE02D35176C00051229 /* QueenImageView.swift */,
+				4D4161622D357EC40055CF77 /* VoteButton.swift */,
 			);
 			path = CustomCommonView;
 			sourceTree = "<group>";
@@ -409,7 +415,9 @@
 				4D062FE12D35176C00051229 /* QueenImageView.swift in Sources */,
 				4D062FCA2D3407FF00051229 /* Color.swift in Sources */,
 				4D062FD02D34134800051229 /* Path.swift in Sources */,
+				4D4161612D357DEA0055CF77 /* User.swift in Sources */,
 				4D062FDF2D35171E00051229 /* EarthImageView.swift in Sources */,
+				4D4161632D357EC40055CF77 /* VoteButton.swift in Sources */,
 				4D062FCE2D3412EB00051229 /* DefaultView.swift in Sources */,
 				4D062FE72D351C9600051229 /* TimeCard.swift in Sources */,
 			);
