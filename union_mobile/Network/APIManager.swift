@@ -20,7 +20,10 @@ typealias HTTPCodes = Range<HTTPCode>
 
 extension HTTPCodes {
     static let success = 200..<300
-    static let urlError = 404
+    static let badRequest = 400
+    static let unauthorized = 401
+    static let notFound = 402
+    static let conflict = 409
     static let serverError = 500..<600
 }
 
@@ -37,6 +40,7 @@ enum APIError: Error, Equatable {
     case httpCode(HTTPCode)
     case unexpectedResponse
     case networkError
+    case apiError(APIErrorResponse)
 //    case imageDeserialization
 }
 
@@ -47,6 +51,8 @@ extension APIError: LocalizedError {
         case .httpCode(let status): return "Unexpected status code: \(status)"
         case .unexpectedResponse: return "서버로 부터 잘못된 응답을 받았습니다."
         case .networkError: return "인터넷 연결이 끊어졌습니다.\n네트워크 상태를 확인해주세요."
+        case .apiError(let error):
+            return error.errorMessage
         }
     }
 }

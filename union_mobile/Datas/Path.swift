@@ -9,4 +9,6 @@ import Foundation
 
 enum Path: Hashable {
     case main
+    case vote
+    case profile(candidateId: Int)
 }

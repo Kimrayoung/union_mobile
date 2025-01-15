@@ -8,6 +8,8 @@
 import Foundation
 
 class Service: ObservableObject {
+    static let shared = Service()
+    
     @Published var path: [Path] = []
     @Published var myUserModel: User! = nil
     

@@ -38,6 +38,11 @@ extension Color {
         return Color(hex: "AEAEB2")
     }
     
+    /// 7C7C7C
+    static var gray03: Color {
+        return Color(hex: "7C7C7C")
+    }
+    
     /// D9D9D9
     static var lightGray3: Color {
         return Color(hex: "D9D9D9")

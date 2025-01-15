@@ -10,3 +10,9 @@ import Foundation
 struct User {
     var id: String
 }
+
+extension User {
+    static func create(_ id: String) -> User {
+        return User(id: id)
+    }
+}

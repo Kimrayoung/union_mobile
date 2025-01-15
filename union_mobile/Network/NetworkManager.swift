@@ -14,7 +14,7 @@ protocol NetworkProtocol {
 final class NetworkManager: NetworkProtocol {
     static let shared = NetworkManager()
     private let session: URLSession
-    private let BASE_URL: String = "http://3.35.9.192:8282/api/viva"
+    private let BASE_URL: String = "https://api-wmu-dev.angkorcoms.com"
     
     init() {
         self.session = URLSession.shared
@@ -26,13 +26,13 @@ final class NetworkManager: NetworkProtocol {
     /// - Returns: 필요한 데이터의 형태로 나감
     func callWithAsync<Value>(endpoint: APIManager, httpCodes: HTTPCodes = .success) async -> Result<Value, Error> where Value: Decodable {
         // 네트워크 연결 체크
-//        guard NetworkMonitor.shared.isNetworkAvailable() else {
-//            return .failure(APIError.networkError)
-//        }
-         
+        //        guard NetworkMonitor.shared.isNetworkAvailable() else {
+        //            return .failure(APIError.networkError)
+        //        }
+        
         do {
             let request = try endpoint.urlRequest(baseURL: BASE_URL)
-//            print(#fileID, #function, #line, "- request url checking🍂: \(request)")
+            print(#fileID, #function, #line, "- request url checking🍂: \(request)")
             let (data, response) = try await session.data(for: request)
             
             guard let code = (response as? HTTPURLResponse)?.statusCode else {
@@ -40,13 +40,21 @@ final class NetworkManager: NetworkProtocol {
             }
             
             guard httpCodes.contains(code) else {
-                if code == HTTPCodes.urlError {
-                    throw APIError.invalidURL
+                if code == HTTPCodes.badRequest || code == HTTPCodes.unauthorized || code == HTTPCodes.notFound || code == HTTPCodes.conflict{
+                    let decoder = JSONDecoder()
+                    if let errorResponse = try? decoder.decode(APIErrorResponse.self, from: data) {
+                        throw APIError.apiError(errorResponse)
+                    }
                 }
                 
                 throw APIError.httpCode(code)
             }
             
+            // 데이터가 비어있거나 값이 없는 경우를 처리
+            if Value.self == EmptyResponse.self,
+               let emptyResponse = EmptyResponse() as? Value {
+                return .success(emptyResponse)
+            }
             
             let decoder = JSONDecoder()
             let decodeData = try decoder.decode(Value.self, from: data)

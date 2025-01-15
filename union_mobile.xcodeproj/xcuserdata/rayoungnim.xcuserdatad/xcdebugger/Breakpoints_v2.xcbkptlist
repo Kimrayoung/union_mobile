@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   uuid = "7FB80A3B-EC07-443F-8FAB-FCAE0D43B49C"
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8EA5703B-798B-4D9E-89EE-09F4E53B9472"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "union_mobileTests/VoteNetworkTest.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "13"
+            endingLineNumber = "13"
+            landmarkName = "testCadidateDataDecoding()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "A8778D41-60A3-41A5-AD86-762734D05128"
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "union_mobile/ViewModels/VoteViewModel.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "123"
+            endingLineNumber = "123"
+            landmarkName = "voteCandidate(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "A8778D41-60A3-41A5-AD86-762734D05128 - 930c0fc00e1b2930"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for union_mobile.VoteViewModel.voteCandidate(Swift.Int) async throws -&gt; ()"
+                  moduleName = "union_mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/lesson_misson/union_mobile/union_mobile/ViewModels/VoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "124"
+                  endingLineNumber = "124"
+                  offsetFromSymbolStart = "216">
+               </Location>
+               <Location
+                  uuid = "A8778D41-60A3-41A5-AD86-762734D05128 - be2206d1732ecf0"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(1) suspend resume partial function for union_mobile.VoteViewModel.voteCandidate(Swift.Int) async throws -&gt; ()"
+                  moduleName = "union_mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/lesson_misson/union_mobile/union_mobile/ViewModels/VoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "308">
+               </Location>
+               <Location
+                  uuid = "A8778D41-60A3-41A5-AD86-762734D05128 - 4757547ef07238e6"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(2) await resume partial function for union_mobile.VoteViewModel.voteCandidate(Swift.Int) async throws -&gt; ()"
+                  moduleName = "union_mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/lesson_misson/union_mobile/union_mobile/ViewModels/VoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "40">
+               </Location>
+               <Location
+                  uuid = "A8778D41-60A3-41A5-AD86-762734D05128 - 930c0fc00e1b28f2"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(3) suspend resume partial function for union_mobile.VoteViewModel.voteCandidate(Swift.Int) async throws -&gt; ()"
+                  moduleName = "union_mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/lesson_misson/union_mobile/union_mobile/ViewModels/VoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "124">
+               </Location>
+               <Location
+                  uuid = "A8778D41-60A3-41A5-AD86-762734D05128 - a0e76469858f86fd"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "(4) suspend resume partial function for union_mobile.VoteViewModel.voteCandidate(Swift.Int) async throws -&gt; ()"
+                  moduleName = "union_mobile"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/rayoungnim/Documents/programming/ios/lesson_misson/union_mobile/union_mobile/ViewModels/VoteViewModel.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "122"
+                  endingLineNumber = "122"
+                  offsetFromSymbolStart = "112">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>

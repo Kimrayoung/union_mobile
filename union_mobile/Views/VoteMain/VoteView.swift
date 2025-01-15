@@ -8,9 +8,25 @@
 import SwiftUI
 
 struct VoteView: View {
+    @EnvironmentObject private var service: Service
     @StateObject private var viewModel = VoteViewModel()
+    @State var showErrorAlert: Bool = false
+    let columns = [
+            GridItem(.flexible(), spacing: 16),
+            GridItem(.flexible(), spacing: 16)
+        ]
     
     var body: some View {
+        if #available(iOS 16, *) {
+            allContent
+                .toolbarBackground(Color.white, for: .navigationBar)
+                .toolbarBackground(.visible, for: .navigationBar)
+        } else {
+            allContent
+        }
+    }
+
+    var allContent: some View {
         ScrollView(.vertical) {
             VStack {
                 QueenImageView()
@@ -20,7 +36,20 @@ struct VoteView: View {
                 candidateView
             }
         }
-        
+        .overlay(content: {
+            if viewModel.showErrorAlert {
+                errorAlert
+            }
+            if viewModel.showCompletedAlert {
+                voteCompleteAlert
+            }
+        })
+        .task {
+            await viewModel.fetchCandidateList()
+            await viewModel.fetchUserVotedCandidateList()
+            viewModel.checkVotedCandidate()
+        }
+        .environmentObject(service)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("2024 WMU")
         .background(
@@ -28,6 +57,7 @@ struct VoteView: View {
         )
         .ignoresSafeArea(.container, edges: [.horizontal, .bottom])
     }
+       
     
     var timeStack: some View {
         HStack(spacing: 18) {
@@ -38,6 +68,7 @@ struct VoteView: View {
         }
     }
     
+    /// 전체적인 투표 정보 및 투표설명
     var voteInformation: some View {
         VStack {
             Text("WORLD MISS UNIVERSITY")
@@ -69,6 +100,7 @@ struct VoteView: View {
         
     }
     
+    /// 투표 정보 뷰(투표 기간 + 투표 방법)
     var voteInformationDescription: some View {
         VStack {
             votePeriod
@@ -82,6 +114,7 @@ struct VoteView: View {
         .padding(.top, 30)
     }
     
+    /// 투표 기간 설명 뷰
     var votePeriod: some View {
         HStack(spacing: 16) {
             Text("period")
@@ -96,6 +129,7 @@ struct VoteView: View {
         .frame(maxWidth: .infinity, alignment: .leading)
     }
     
+    /// 투표 하는 방법 설명 뷰
     var howToVote: some View {
         HStack(spacing: 16) {
             Text("How To Vote")
@@ -119,6 +153,7 @@ struct VoteView: View {
         .frame(maxWidth: .infinity, alignment: .topLeading)
     }
     
+    /// 후보자 정보
     var candidateView: some View {
         VStack(spacing: 0) {
             Rectangle()
@@ -135,19 +170,45 @@ struct VoteView: View {
                 .foregroundStyle(Color.gray02)
                 .font(.kanRegular(14))
                 .frame(maxWidth: .infinity, alignment: .leading)
+            candidateList
         }
         .padding(.vertical, 50)
         .padding(.horizontal, 16)
     }
     
-//    var candidateList: some View {
-//        LazyVGrid(columns: columns, spacing: 16) {
-//            ForEach(viewModel) { candidate in
-//                CandidateCard(candidate: candidate)
-//            }
-//        }
-//        .padding()
-//    }
+    /// 후보자 리스트
+    var candidateList: some View {
+        LazyVGrid(columns: columns, spacing: 16) {
+            ForEach(viewModel.candidateList) { candidate in
+                CandidateCard(viewModel: viewModel, candidate: candidate, voted: candidate.voted ?? false)
+            }
+        }
+        .padding()
+    }
+    
+    var errorAlert: some View {
+        CustomAlert(
+            title: "Error", 
+            message: viewModel.error?.localizedDescription ?? "try again please",
+            primaryButtonTitle: "Okay",
+            secondaryButtonTitle: nil,
+            isPresented: $viewModel.showErrorAlert,
+            primaryAction: nil,
+            secondaryAction: nil
+        )
+    }
+    
+    var voteCompleteAlert: some View {
+        CustomAlert(
+            title: "Voting completed",
+            message: "Thank you for voting",
+            primaryButtonTitle: "Confirm",
+            secondaryButtonTitle: nil,
+            isPresented: $viewModel.showCompletedAlert,
+            primaryAction: nil,
+            secondaryAction: nil
+        )
+    }
 
 }
 

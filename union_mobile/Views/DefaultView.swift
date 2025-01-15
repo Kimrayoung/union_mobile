@@ -17,6 +17,10 @@ struct DefaultView: View {
                         switch path {
                         case .main:
                             MainView()
+                        case .vote:
+                            VoteView()
+                        case .profile(let candidateId):
+                            ProfileView(candidateId)
                         }
                     }
             }

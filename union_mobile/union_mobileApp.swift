@@ -9,7 +9,7 @@ import SwiftUI
 
 @main
 struct union_mobileApp: App {
-    @StateObject private var service = Service()
+    @StateObject private var service = Service.shared
     
     var body: some Scene {
         WindowGroup {
