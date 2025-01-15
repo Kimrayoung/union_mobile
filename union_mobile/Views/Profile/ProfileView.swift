@@ -31,9 +31,14 @@ struct ProfileView: View {
     var allContent: some View {
         VStack(spacing: 0) {
             ScrollView {
-                profileImageTabView
-                profileInfo
-                copyrightView
+                if !viewModel.profileData.sortedProfilInfoList.isEmpty {
+                    profileImageTabView
+                    profileInfo
+                    copyrightView
+                } else {
+                    ProgressView()
+                        .frame(maxHeight: .infinity)
+                }
             }
             VoteButton(height: 48, buttonAction: { try await viewModel.voteCandidate() }, voteComplete: viewModel.profileData.voted, needIcon: viewModel.profileData.voted)
                 .padding(.horizontal, 16)
@@ -76,8 +81,7 @@ struct ProfileView: View {
     var profileImageTabView: some View {
         TabView(selection: $profileImageIndex) {
             ForEach(0..<viewModel.profileData.sortedProfilInfoList.count, id: \.self) { index in
-                ProfileImageView(imageInfo: viewModel.profileData.profileInfoList[index])
-                
+                ProfileImageView(imageInfo: viewModel.profileData.sortedProfilInfoList[index])
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))

@@ -20,12 +20,15 @@ struct CandidateCard: View {
             if #available(iOS 16, *) {
                 candidateImage
             } else {
-                ZStack(content: {
-                    candidateImage
-                    NavigationLink(destination: ProfileView(candidate.id), isActive: $isNavigatingToProfile) {
-                        EmptyView()
-                    }
-                })
+                candidateImage
+                    .background(
+                        NavigationLink(
+                            destination: ProfileView(candidate.id),
+                            isActive: $isNavigatingToProfile
+                        ) {
+                            EmptyView()
+                        }
+                    )
             }
             Text(candidate.name)
                 .font(.kanMedium(16))
@@ -53,7 +56,7 @@ struct CandidateCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.bottom, 18)
             .onTapGesture {
-                print(#fileID, #function, #line, "- 사진 tap")
+                print(#fileID, #function, #line, "- 사진 tap:\(candidate.id)")
                 if #available(iOS 16, *) {
                     service.path.append(.profile(candidateId: candidate.id))
                 } else {

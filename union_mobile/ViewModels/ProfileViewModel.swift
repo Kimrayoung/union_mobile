@@ -14,11 +14,16 @@ class ProfileViewModel: ObservableObject {
     private let voteNetwork = VoteNetworkService()
     private var cancellables = Set<AnyCancellable>()
     
+    /// 후보자 아이디
     private(set) var candidateId: Int
+    /// 후보자 프로필
     @Published private(set) var profileData: CandidateDetail = CandidateDetail(id: 0, candidateNumber: 0, name: "", country: "", education: "", major: "", hobby: "", talent: "", ambition: "", contents: "", profileInfoList: [], regDt: "", voted: false)
     
+    /// 에러 메시지
     @Published private(set) var error: Error?
+    /// 에러 얼럿
     @Published var showErrorAlert: Bool = false
+    /// 투표완료 얼럿
     @Published var showCompletedAlert: Bool = false
     
     init(_ candidateId: Int) {
@@ -29,6 +34,7 @@ class ProfileViewModel: ObservableObject {
     }
     
     @MainActor
+    /// 후보자 프로필 불러오기
     func fetchProfileData() async throws {
         let vote = Vote(userId: service.myUserModel.id, id: candidateId)
         print(#fileID, #function, #line, "- voteChecking:\(vote)")
@@ -55,6 +61,7 @@ class ProfileViewModel: ObservableObject {
     /// - Parameter candidateId: 투표할 후보자 아이디
     func voteCandidate() async throws {
         let vote = Vote(userId: service.myUserModel.id, id: self.candidateId)
+        
         do {
             let result = try await voteNetwork.voteCandidate(vote)
             
@@ -63,12 +70,10 @@ class ProfileViewModel: ObservableObject {
                 try await self.fetchProfileData()
                 self.showCompletedAlert = true
             case .failure(let error):
-                print(#fileID, #function, #line, "- error:\(error)")
                 self.error = error
                 self.showErrorAlert = true
             }
         } catch {
-            print(#fileID, #function, #line, "- error:\(error)")
             self.error = error
             self.showErrorAlert = true
         }
