@@ -11,6 +11,8 @@ struct VoteView: View {
     @EnvironmentObject private var service: Service
     @StateObject private var viewModel = VoteViewModel()
     @State var showErrorAlert: Bool = false
+    @State var showCloseAlert: Bool = false
+    
     let columns = [
             GridItem(.flexible(), spacing: 16),
             GridItem(.flexible(), spacing: 16)
@@ -21,8 +23,14 @@ struct VoteView: View {
             allContent
                 .toolbarBackground(Color.white, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        CloseButton(showCloseAlert: $showCloseAlert)
+                    }
+                }
         } else {
             allContent
+                .navigationBarItems(trailing: CloseButton(showCloseAlert: $showCloseAlert))
         }
     }
 
@@ -43,6 +51,9 @@ struct VoteView: View {
             if viewModel.showCompletedAlert {
                 voteCompleteAlert
             }
+            if showCloseAlert {
+                CloseAlert(showCloseAlert: $showCloseAlert)
+            }
         })
         .task {
             await viewModel.fetchCandidateList()
@@ -52,6 +63,7 @@ struct VoteView: View {
         .environmentObject(service)
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("2024 WMU")
+        .navigationBarBackButtonHidden()
         .background(
             Color.black
         )

@@ -12,6 +12,7 @@ struct ProfileView: View {
     @EnvironmentObject private var service: Service
     @StateObject private var viewModel: ProfileViewModel
     @State private var profileImageIndex = 0
+    @State var showCloseAlert: Bool = false
     
     init(_ candidateId: Int) {
         _viewModel = StateObject(wrappedValue: ProfileViewModel(candidateId))
@@ -22,8 +23,18 @@ struct ProfileView: View {
             allContent
                 .toolbarBackground(Color.white, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        CloseButton(showCloseAlert: $showCloseAlert)
+                    }
+                    ToolbarItem(placement: .topBarLeading) {
+                        NavigationBackButton()
+                    }
+                }
         } else {
             allContent
+                .navigationBarItems(trailing: CloseButton(showCloseAlert: $showCloseAlert))
+                .navigationBarItems(leading: NavigationBackButton())
         }
     }
     
@@ -50,9 +61,13 @@ struct ProfileView: View {
             if viewModel.showCompletedAlert {
                 voteCompleteAlert
             }
+            if showCloseAlert {
+                CloseAlert(showCloseAlert: $showCloseAlert)
+            }
         })
         .navigationBarTitleDisplayMode(.inline)
         .navigationTitle("2024 WMU")
+        .navigationBarBackButtonHidden(true)
         .background(Color.black)
     }
     

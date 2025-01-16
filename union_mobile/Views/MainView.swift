@@ -10,14 +10,21 @@ import SwiftUI
 struct MainView: View {
     @EnvironmentObject private var service: Service
     @StateObject private var viewModel = MainViewModel()
+    @State private var showCloseAlert: Bool = false
     
     var body: some View {
         if #available(iOS 16, *) {
            allContent
                 .toolbarBackground(Color.white, for: .navigationBar)
                 .toolbarBackground(.visible, for: .navigationBar)
+                .toolbar {
+                    ToolbarItem(placement: .topBarTrailing) {
+                        CloseButton(showCloseAlert: $showCloseAlert)
+                    }
+                }
         } else {
             allContent
+                .navigationBarItems(trailing: CloseButton(showCloseAlert: $showCloseAlert))
         }
     }
     
@@ -32,6 +39,9 @@ struct MainView: View {
         .overlay(content: {
             if viewModel.showErrorAlert {
                 idEmptyAlert
+            }
+            if showCloseAlert {
+                CloseAlert(showCloseAlert: $showCloseAlert)
             }
         })
         .environmentObject(service)

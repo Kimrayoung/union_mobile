@@ -68,9 +68,9 @@ struct CustomAlert: View {
                         }) {
                             Text(secondaryButtonTitle)
                                 .font(.kanMedium(16))
+                                .foregroundStyle(Color.red)
                                 .frame(maxWidth: .infinity, maxHeight: .infinity, alignment: .center)
 //                                .padding()
-                                .background(Color.gray.opacity(0.2))
                                 .cornerRadius(10)
                         }
                     }
