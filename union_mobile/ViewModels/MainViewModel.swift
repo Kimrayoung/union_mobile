@@ -18,7 +18,7 @@ class MainViewModel: ObservableObject {
         if self.userId == "" {
             showErrorAlert = true
         } else {
-            print(#fileID, #function, #line, "- self.userId: \(self.userId)")
+//            print(#fileID, #function, #line, "- self.userId: \(self.userId)")
             service.myUserModel = User.create(self.userId)
             if #available(iOS 16, *) {
                 self.service.path.append(.vote)

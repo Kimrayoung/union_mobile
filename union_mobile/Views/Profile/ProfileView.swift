@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 
+/// 후보자의 상세한 데이터 화면
 struct ProfileView: View {
     @EnvironmentObject private var service: Service
     @StateObject private var viewModel: ProfileViewModel
@@ -96,7 +97,7 @@ struct ProfileView: View {
     var profileImageTabView: some View {
         TabView(selection: $profileImageIndex) {
             ForEach(0..<viewModel.profileData.sortedProfilInfoList.count, id: \.self) { index in
-                ProfileImageView(imageInfo: viewModel.profileData.sortedProfilInfoList[index])
+                ProfileImageView(viewModel: viewModel, imageInfo: viewModel.profileData.sortedProfilInfoList[index])
             }
         }
         .tabViewStyle(PageTabViewStyle(indexDisplayMode: .always))

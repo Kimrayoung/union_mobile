@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 타이머 카드
 struct TimeCard: View {
     let value: Int
     let unit: String

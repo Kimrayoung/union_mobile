@@ -94,7 +94,7 @@ class VoteViewModel: ObservableObject {
             case .success(let data):
                 self.votedCandidateList = data
             case .failure(let error):
-                print(#fileID, #function, #line, "- error:\(error.localizedDescription)")
+//                print(#fileID, #function, #line, "- error:\(error.localizedDescription)")
                 self.error = error
                 self.showErrorAlert = true
             }
@@ -112,7 +112,7 @@ class VoteViewModel: ObservableObject {
         }
         
         self.candidateList = tempCandidateList
-        print(#fileID, #function, #line, "- calling☘️")
+//        print(#fileID, #function, #line, "- calling☘️")
     }
     
     /// 후보자한테 투표

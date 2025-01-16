@@ -8,7 +8,9 @@
 import SwiftUI
 import Kingfisher
 
+/// 후보자 이미지
 struct ProfileImageView: View {
+    @ObservedObject var viewModel: ProfileViewModel
     let imageInfo: ProfileInfoList
     
     var body: some View {
@@ -23,7 +25,9 @@ struct ProfileImageView: View {
             KFImage(URL(string: imageInfo.profileUrl))
                 .placeholder { ProgressView() }
                 .onFailure { error in
-                    print(#fileID, #function, #line, "- image error")
+//                    print(#fileID, #function, #line, "- image error")
+                    viewModel.error = error
+                    viewModel.showErrorAlert = true
                 }
                 .resizable()
                 .aspectRatio(contentMode: .fit)

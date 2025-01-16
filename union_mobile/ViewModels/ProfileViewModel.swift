@@ -20,7 +20,7 @@ class ProfileViewModel: ObservableObject {
     @Published private(set) var profileData: CandidateDetail = CandidateDetail(id: 0, candidateNumber: 0, name: "", country: "", education: "", major: "", hobby: "", talent: "", ambition: "", contents: "", profileInfoList: [], regDt: "", voted: false)
     
     /// 에러 메시지
-    @Published private(set) var error: Error?
+    @Published var error: Error?
     /// 에러 얼럿
     @Published var showErrorAlert: Bool = false
     /// 투표완료 얼럿
@@ -37,7 +37,7 @@ class ProfileViewModel: ObservableObject {
     /// 후보자 프로필 불러오기
     func fetchProfileData() async throws {
         let vote = Vote(userId: service.myUserModel.id, id: candidateId)
-        print(#fileID, #function, #line, "- voteChecking:\(vote)")
+//        print(#fileID, #function, #line, "- voteChecking:\(vote)")
         do {
             let result = try await voteNetwork.candidateDetailAndCheckVote(vote)
             
@@ -45,12 +45,12 @@ class ProfileViewModel: ObservableObject {
             case .success(let data):
                 profileData = data
             case .failure(let error):
-                print(#fileID, #function, #line, "- error:\(error.localizedDescription)")
+//                print(#fileID, #function, #line, "- error:\(error.localizedDescription)")
                 self.error = error
                 self.showErrorAlert = true
             }
         } catch {
-            print(#fileID, #function, #line, "- error:\(error.localizedDescription)")
+//            print(#fileID, #function, #line, "- error:\(error.localizedDescription)")
             self.error = error
             self.showErrorAlert = true
         }

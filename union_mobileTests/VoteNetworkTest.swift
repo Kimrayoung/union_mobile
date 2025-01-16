@@ -11,12 +11,8 @@ import XCTest
 final class VoteNetworkTest: XCTestCase {
     /// CandidateList 파싱 테스트
     func testCadidateDataDecoding() async throws {
-//        print("test start")
-//        XCTAssert(true)
-//        print("test end")
 //        Given
         let mockNetworkManager = MockNetworkManager()
-        print(#fileID, #function, #line, "- here")
         // Mock response 설정
         let jsonString = """
            {

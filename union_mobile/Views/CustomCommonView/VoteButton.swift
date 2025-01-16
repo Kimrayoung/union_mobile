@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 투표하기 버튼
 struct VoteButton: View {
     let height: CGFloat
     let buttonAction: () async throws -> Void

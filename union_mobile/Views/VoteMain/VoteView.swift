@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 투표 정보 화면(후보자 리스트 & 투표 정보)
 struct VoteView: View {
     @EnvironmentObject private var service: Service
     @StateObject private var viewModel = VoteViewModel()

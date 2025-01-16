@@ -25,14 +25,9 @@ final class NetworkManager: NetworkProtocol {
     ///   - httpCodes: 반드시 특정 httpCode가 들어와야 할 경우에 작성(ex, 203만 들어와야 할 경우)
     /// - Returns: 필요한 데이터의 형태로 나감
     func callWithAsync<Value>(endpoint: APIManager, httpCodes: HTTPCodes = .success) async -> Result<Value, Error> where Value: Decodable {
-        // 네트워크 연결 체크
-        //        guard NetworkMonitor.shared.isNetworkAvailable() else {
-        //            return .failure(APIError.networkError)
-        //        }
-        
         do {
             let request = try endpoint.urlRequest(baseURL: BASE_URL)
-            print(#fileID, #function, #line, "- request url checking🍂: \(request)")
+//            print(#fileID, #function, #line, "- request url checking🍂: \(request)")
             let (data, response) = try await session.data(for: request)
             
             guard let code = (response as? HTTPURLResponse)?.statusCode else {

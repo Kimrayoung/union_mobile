@@ -24,7 +24,7 @@ final class MockNetworkManager: NetworkProtocol {
         }
         
         guard httpCodes.contains(response.statusCode) else {
-            if response.statusCode == HTTPCodes.urlError {
+            if response.statusCode == HTTPCodes.badRequest {
                 print(#fileID, #function, #line, "- error")
                 return .failure(APIError.invalidURL)
             }

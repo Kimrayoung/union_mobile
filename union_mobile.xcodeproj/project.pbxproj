@@ -258,7 +258,6 @@
 				4D41615F2D357D560055CF77 /* VoteMain */,
 				4D41615C2D357CA00055CF77 /* CustomCommonView */,
 				4D062FA12D34033100051229 /* MainView.swift */,
-				4D273F112D38D4DB005BF880 /* CloseAlert.swift */,
 				4D062FCD2D3412EB00051229 /* DefaultView.swift */,
 				4D273F0D2D383B6A005BF880 /* SampleView.swift */,
 			);
@@ -295,6 +294,7 @@
 			children = (
 				4D062FDE2D35171E00051229 /* EarthImageView.swift */,
 				4D062FE02D35176C00051229 /* QueenImageView.swift */,
+				4D273F112D38D4DB005BF880 /* CloseAlert.swift */,
 				4D4161622D357EC40055CF77 /* VoteButton.swift */,
 				4D4161662D36653B0055CF77 /* CustomAlert.swift */,
 				4D273F0F2D38D27E005BF880 /* CloseButton.swift */,

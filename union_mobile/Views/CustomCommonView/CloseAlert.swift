@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 앱 종료할 건지 물어보는 얼럿
 struct CloseAlert: View {
     @Binding var showCloseAlert: Bool
     var body: some View {
@@ -21,6 +22,7 @@ struct CloseAlert: View {
         )
     }
     
+    /// 앱 종료 로직
     func gracefulExit() {
         //네트워크 연결 종료
         URLSession.shared.invalidateAndCancel()

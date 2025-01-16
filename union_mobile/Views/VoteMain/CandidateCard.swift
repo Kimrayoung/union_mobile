@@ -8,6 +8,7 @@
 import SwiftUI
 import Kingfisher
 
+/// 후보자 카드(후보자 리스트에서 사용)
 struct CandidateCard: View {
     @EnvironmentObject var service: Service
     @ObservedObject var viewModel: VoteViewModel
@@ -56,7 +57,6 @@ struct CandidateCard: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .padding(.bottom, 18)
             .onTapGesture {
-                print(#fileID, #function, #line, "- 사진 tap:\(candidate.id)")
                 if #available(iOS 16, *) {
                     service.path.append(.profile(candidateId: candidate.id))
                 } else {

@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 네비게이션 뒤로가기 버튼(전 화면으로 돌아가기)
 struct NavigationBackButton: View {
     @Environment(\.dismiss) private var dismiss
     @EnvironmentObject var service: Service

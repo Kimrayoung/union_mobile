@@ -7,6 +7,7 @@
 
 import SwiftUI
 
+/// 앱 종료 버튼
 struct CloseButton: View {
     @Binding var showCloseAlert: Bool
     var body: some View {
